@@ -1,10 +1,10 @@
 import './App.css';
-import Navbar from './components/_layout/Navbar';
+import Sidebar from './components/_layout/Sidebar';
 
 function App() {
   return (
-    <div className="bg-slate-100 h-screen w-full">
-      <Navbar />
+    <div className="bg-zinc-700 h-screen w-full">
+      <Sidebar />
     </div>
   );
 }
