@@ -6,7 +6,7 @@ import SizeOptions from '../SizeOptions';
 
 const Main = () => {
   return (
-    <div className='flex flex-col items-center justify-center h-full w-full max-w-[80%]'>
+    <div className='flex flex-col items-center h-full w-full max-w-[80%] py-12'>
 
       <SizeOptions />        
 
