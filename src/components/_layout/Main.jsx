@@ -1,14 +1,16 @@
 import React from 'react'
 
 import Canvas from '../Canvas'
+import SizeOptions from '../SizeOptions';
+
 
 const Main = () => {
   return (
-    <div className='flex items-center justify-center h-full w-full max-w-[80%]'>
+    <div className='flex flex-col items-center justify-center h-full w-full max-w-[80%]'>
 
-        
+      <SizeOptions />        
 
-        <Canvas />
+      <Canvas />
     </div>
   )
 }

@@ -5,8 +5,8 @@ import Sidebar from './components/_layout/Sidebar';
 
 function App() {
   return (
-    <div className="flex justify-end bg-zinc-700 h-screen w-full">
-      
+    <div className="flex justify-end bg-zinc-700 h-screen w-full">      
+
       <Main />      
       
       <Sidebar />
