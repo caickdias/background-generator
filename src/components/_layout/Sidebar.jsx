@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ColorPicker from '../ColorPicker'
 
+import AppContext from '../../context/AppContext';
+
+
 const Sidebar = () => {
+
+  const { selectedElement } = useContext(AppContext);
+
+  const clickHandler = () => {
+    console.log(selectedElement.current);
+  }
+
   return (
     <div className='flex flex-col w-1/4 min-w-[20%] h-screen p-4 text-gray-200 shadow-lg shadow-gray-900 bg-zinc-800 overflow-y-scroll'>
         
@@ -12,6 +22,12 @@ const Sidebar = () => {
         </div>
 
         <ColorPicker />
+        
+        <button
+          onClick={clickHandler}
+        >
+          alksdjaldk
+        </button>
         
     </div>
   )
