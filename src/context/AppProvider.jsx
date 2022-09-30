@@ -7,7 +7,7 @@ import Rectangle from '../components/elements/Rectangle';
 const AppProvider = ({ children }) => {
 
     const [bgColor, setBgColor] = useState('#fff');
-    const [elements, setElements] = useState([]);
+    const [elements, setElements] = useState([<Rectangle />]);
     const selectedElement = useRef(elements[0]);
 
     return(
