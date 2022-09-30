@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import ColorPicker from '../ColorPicker'
 
 import AppContext from '../../context/AppContext';
-
+import Circle from '../elements/Circle';
 
 const Sidebar = () => {
 
-  const { selectedElement } = useContext(AppContext);
+  const { selectedElement, setElements } = useContext(AppContext);
 
   const clickHandler = () => {
-    console.log(selectedElement.current);
+    setElements((elements) => [...elements, <Circle />]);
   }
 
   return (
@@ -23,10 +23,15 @@ const Sidebar = () => {
 
         <ColorPicker />
         
+        <div className='h-fit w-full border-b-[1px] border-gray-500 '>
+          <h1 className='font-bold text-lg'>
+              Add Element
+          </h1>
+        </div>
         <button
           onClick={clickHandler}
         >
-          alksdjaldk
+          Circle
         </button>
         
     </div>
