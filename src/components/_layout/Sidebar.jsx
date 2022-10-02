@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import ColorPicker from '../ColorPicker'
 
 import AppContext from '../../context/AppContext';
-import Circle from '../elements/Circle';
+import { Circle } from 'react-konva';
 
 const Sidebar = () => {
 
   const { selectedElement, setElements } = useContext(AppContext);
 
   const clickHandler = () => {
-    setElements((elements) => [...elements, <Circle />]);
+    setElements((elements) => [...elements, <Circle x={200} y={200} stroke="black" radius={50} draggable />]);
   }
 
   return (
