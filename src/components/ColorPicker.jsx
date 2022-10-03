@@ -7,16 +7,27 @@ import { HexagonalColorHue, HexagonalColorPicker } from "react-hexagon-color-pic
 
 const ColorPicker = () => {
 
-    const { setBgColor } = useContext(AppContext);
+    const { setBgColor, elements, setElements, selectedElementId, setSelectedElementId } = useContext(AppContext);
 
     const [hue, setHue] = useState(0);
+
+    const handleColorChange = (color) => {
+        if(selectedElementId == ''){
+            setBgColor(color);
+        }
+        else {
+            const index = elements.findIndex(element => element.id == selectedElementId)
+            elements[index].fill = color;  
+            setSelectedElementId('')
+        }
+    }
 
     return (
         <div style={{textAlign: "center", margin: 16}}>
             <div>
                 <HexagonalColorPicker 
                     hue={hue}                    
-                    onColorChange={setBgColor}
+                    onColorChange={handleColorChange}
                 />                                
             </div>
 

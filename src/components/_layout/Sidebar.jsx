@@ -6,10 +6,19 @@ import { Circle } from 'react-konva';
 
 const Sidebar = () => {
 
-  const { selectedElement, setElements } = useContext(AppContext);
+  const { setElements } = useContext(AppContext);
 
   const clickHandler = () => {
-    setElements((elements) => [...elements, <Circle x={200} y={200} stroke="black" radius={50} draggable />]);
+    setElements((elements) => 
+    [...elements, 
+      {
+        id: (Math.random() * 10000).toString(),
+        type: Circle,
+        fill: 'red',
+        radius: 50,
+        draggable: true,
+      }
+  ]);
   }
 
   return (
@@ -28,6 +37,7 @@ const Sidebar = () => {
               Add Element
           </h1>
         </div>
+        
         <button
           onClick={clickHandler}
         >
