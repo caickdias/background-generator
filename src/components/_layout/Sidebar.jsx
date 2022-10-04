@@ -8,7 +8,7 @@ const Sidebar = () => {
 
   const { setElements } = useContext(AppContext);
 
-  const clickHandler = type => {
+  const handleAddElement = type => {
     setElements((elements) => 
     [...elements, 
       elementObjects[type]  
@@ -33,16 +33,16 @@ const Sidebar = () => {
         </div>
         
         <div className='flex flex-wrap justify-center items-center'>
-          <button className='w-1/2 mb-2' onClick={clickHandler} >
+          <button className='w-1/2 mb-2' onClick={() => handleAddElement('circle')} >
             Circle
           </button>
-          <button className='w-1/2 mb-2' onClick={clickHandler} >
+          <button className='w-1/2 mb-2' onClick={() => handleAddElement('rect')} >
             Rect
           </button>
-          <button className='w-1/2' onClick={clickHandler} >
-            Star
+          <button className='w-1/2 mb-2' onClick={() => handleAddElement('rect')} >
+            Image
           </button>
-          <button className='w-1/2' onClick={clickHandler} >
+          <button className='w-1/2 mb-2' onClick={() => handleAddElement('text')} >
             Text
           </button>
         </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 
 import AppContext from '../context/AppContext';
-import { Stage, Layer } from 'react-konva';
+import { Stage, Layer, Rect } from 'react-konva';
 
 const Canvas = () => {
     
@@ -18,12 +18,12 @@ const Canvas = () => {
           elements?.map(element => {
             const { id, type: CanvasObject, ...rest } = element;   
 
-            return (
+            return (              
               <CanvasObject 
                 key={id}
                 onClick={() => handleSelectObject(id)}
                 {...rest}
-              />
+              />                            
             )
           })
         }
