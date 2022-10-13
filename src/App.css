@@ -1,3 +1,18 @@
 body {
     font-family: 'Courier New';
 }
+
+
+input[type=range]::-moz-range-track {    
+    animate: 0.2s;    
+    background: lightGrey;
+    border-radius: 1px;
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 25px;
+    background: '#cccccc';
+    cursor: pointer;
+}

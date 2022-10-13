@@ -5,7 +5,7 @@ import { Stage, Layer, Rect } from 'react-konva';
 
 const Canvas = () => {
     
-  const { bgColor, elements, setSelectedElementId } = useContext(AppContext);
+  const { bgColor, elements, selectedElementId, setSelectedElementId } = useContext(AppContext);
   
   const handleSelectObject = id => {
     setSelectedElementId(id);    
@@ -21,6 +21,7 @@ const Canvas = () => {
             return (              
               <CanvasObject 
                 key={id}
+                stroke={selectedElementId == id ? 'red' : 'transparent'}
                 onClick={() => handleSelectObject(id)}
                 {...rest}
               />                            
