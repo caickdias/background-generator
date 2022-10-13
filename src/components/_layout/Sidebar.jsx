@@ -6,13 +6,20 @@ import elementObjects from '../../data/elements';
 
 const Sidebar = () => {
 
-  const { setElements } = useContext(AppContext);
+  const { setElements, selectedElementId, setSelectedElementId } = useContext(AppContext);
 
   const handleAddElement = type => {
+    const id = (Math.random() * 10000).toString();
+
     setElements((elements) => 
-    [...elements, 
-      elementObjects[type]  
-    ]);
+      [...elements, 
+        {
+          ...elementObjects[type],
+          id
+        }        
+      ])
+
+      setSelectedElementId(id);      
   }
 
   return (
@@ -47,6 +54,9 @@ const Sidebar = () => {
           </button>
         </div>
         
+        <div>
+          <p>{selectedElementId}</p>
+        </div>
     </div>
   )
 }

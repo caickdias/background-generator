@@ -15,10 +15,20 @@ const ColorPicker = () => {
         if(selectedElementId == ''){
             setBgColor(color);
         }
-        else {
-            const index = elements.findIndex(element => element.id == selectedElementId)
-            elements[index].fill = color;  
-            setSelectedElementId('')
+        else {            
+            const index = elements.findIndex(element => element.id == selectedElementId);
+            const updatedElement = {
+                ...elements[index],
+                fill: color
+            }
+            const updatedElements = elements.map((element) => {
+                if(element.id == updatedElement.id){
+                    return updatedElement;
+                }
+                return {...element};
+            });
+            setElements(updatedElements);
+            
         }
     }
 

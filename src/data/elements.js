@@ -2,14 +2,13 @@ import { Circle, Rect, Text } from "react-konva"
 
 const elements = {
     'circle': {
-        id: (Math.random() * 10000).toString(),
+        
         type: Circle,
         fill: 'red',
         radius: 50,
         draggable: true,        
       },
-      'rect': {
-        id: (Math.random() * 10000).toString(),
+      'rect': {        
         type: Rect,
         fill: 'gray',
         width: 100,
