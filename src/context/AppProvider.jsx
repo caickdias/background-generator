@@ -2,12 +2,18 @@ import React, { useState, useRef } from 'react';
 
 import AppContext from './AppContext';
 
+const CANVAS_WIDTH = 600;
+const CANVAS_HEIGHT = 300;
+
 const AppProvider = ({ children }) => {
 
     const [bgColor, setBgColor] = useState('#fff');
     const [elements, setElements] = useState([]);
     const [selectedElementId, setSelectedElementId] = useState('');
-    const [refresh, setRefresh] = useState(true);
+    const [canvasSize, setCanvasSize] = useState({ width: CANVAS_WIDTH, height: CANVAS_HEIGHT })
+    const [currentSize, setCurrentSize] = useState({ width: CANVAS_WIDTH, height: CANVAS_HEIGHT });
+    
+    const [age, setAge] = useState(10);
 
     return(
         <AppContext.Provider value={{ 
@@ -16,7 +22,11 @@ const AppProvider = ({ children }) => {
             elements, 
             setElements, 
             selectedElementId, 
-            setSelectedElementId 
+            setSelectedElementId,
+            canvasSize,
+            setCanvasSize,
+            currentSize, 
+            setCurrentSize,            
         }}>
             { children }
         </AppContext.Provider>

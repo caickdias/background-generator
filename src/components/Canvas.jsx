@@ -5,14 +5,14 @@ import { Stage, Layer, Rect } from 'react-konva';
 
 const Canvas = () => {
     
-  const { bgColor, elements, selectedElementId, setSelectedElementId } = useContext(AppContext);
+  const { bgColor, elements, selectedElementId, setSelectedElementId, canvasSize } = useContext(AppContext);
   
   const handleSelectObject = id => {
     setSelectedElementId(id);    
   }
 
   return (
-    <Stage width={600} height={300} style={{ backgroundColor: bgColor }}>
+    <Stage width={canvasSize.width} height={canvasSize.height} style={{ backgroundColor: bgColor }}>
       <Layer>
         {          
           elements?.map(element => {
