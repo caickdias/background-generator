@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 import AppContext from './AppContext';
 
@@ -11,9 +11,7 @@ const AppProvider = ({ children }) => {
     const [elements, setElements] = useState([]);
     const [selectedElementId, setSelectedElementId] = useState('');
     const [canvasSize, setCanvasSize] = useState({ width: CANVAS_WIDTH, height: CANVAS_HEIGHT })
-    const [currentSize, setCurrentSize] = useState({ width: CANVAS_WIDTH, height: CANVAS_HEIGHT });
-    
-    const [age, setAge] = useState(10);
+    const [currentSize, setCurrentSize] = useState({ width: CANVAS_WIDTH, height: CANVAS_HEIGHT });    
 
     return(
         <AppContext.Provider value={{ 

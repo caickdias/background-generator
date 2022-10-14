@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react';
 
 import AppContext from '../context/AppContext';
 import { Stage, Layer, Rect } from 'react-konva';
@@ -7,12 +7,16 @@ const Canvas = () => {
     
   const { bgColor, elements, selectedElementId, setSelectedElementId, canvasSize } = useContext(AppContext);
   
-  const handleSelectObject = id => {
-    setSelectedElementId(id);    
+  const handleSelectObject = id => {    
+    selectedElementId == id ? setSelectedElementId('') : setSelectedElementId(id);    
   }
 
   return (
-    <Stage width={canvasSize.width} height={canvasSize.height} style={{ backgroundColor: bgColor }}>
+    <Stage 
+      width={canvasSize.width} 
+      height={canvasSize.height}       
+      style={{ backgroundColor: bgColor }}
+    >
       <Layer>
         {          
           elements?.map(element => {
@@ -22,7 +26,7 @@ const Canvas = () => {
               <CanvasObject 
                 key={id}
                 stroke={selectedElementId == id ? 'red' : 'transparent'}
-                onClick={() => handleSelectObject(id)}
+                onClick={() => handleSelectObject(id)}                
                 {...rest}
               />                            
             )
@@ -30,7 +34,7 @@ const Canvas = () => {
         }
       </Layer>
     </Stage>
-  )
-}
+  );
+};
 
-export default Canvas
+export default Canvas;
